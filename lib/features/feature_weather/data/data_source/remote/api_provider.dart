@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:weather_program/core/params/ForecastParams.dart';
+import 'package:weather_program/core/params/forecast_params.dart';
 import 'package:weather_program/core/utils/constants.dart';
 import 'package:weather_program/features/feature_weather/data/models/suggest_city_model.dart';
 import 'package:weather_program/features/feature_weather/domain/entities/suggest_city_entity.dart';

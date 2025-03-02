@@ -3,7 +3,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:weather_program/core/params/ForecastParams.dart';
+import 'package:weather_program/core/params/forecast_params.dart';
 import 'package:weather_program/core/resources/data_state.dart';
 import 'package:weather_program/features/feature_weather/data/data_source/remote/api_provider.dart';
 import 'package:weather_program/features/feature_weather/data/models/current_city_model.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:weather_program/core/params/ForecastParams.dart';
+import 'package:weather_program/core/params/forecast_params.dart';
 import 'package:weather_program/core/utils/date_converter.dart';
 import 'package:weather_program/core/widgets/app_background.dart';
 import 'package:weather_program/core/widgets/dot_loading_widget.dart';

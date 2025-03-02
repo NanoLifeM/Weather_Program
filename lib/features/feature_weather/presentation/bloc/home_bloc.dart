@@ -3,7 +3,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import 'package:weather_program/core/params/ForecastParams.dart';
+import 'package:weather_program/core/params/forecast_params.dart';
 import 'package:weather_program/core/resources/data_state.dart';
 import 'package:weather_program/features/feature_weather/domain/use_cases/get_current_weather_usecase.dart';
 import 'package:weather_program/features/feature_weather/domain/use_cases/get_forecast_weather_usecase.dart';
