@@ -14,7 +14,7 @@ class MainWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> pageViewWidget = [
-      const HomeScreen(),
+       HomeScreen(),
        BookmarkScreen(pageController: pageController,),
     ];
 

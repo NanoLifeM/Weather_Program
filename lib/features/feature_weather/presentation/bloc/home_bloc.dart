@@ -14,14 +14,16 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  final GetCurrentWeatherUseCase getCurrentWeatherUseCase;
+  final GetCurrentWeatherUseCase _getCurrentWeatherUseCase;
   final GetForecastWeatherUseCase _getForecastWeatherUseCase;
-  HomeBloc(this.getCurrentWeatherUseCase,this._getForecastWeatherUseCase) : super(HomeState(cwStatus: CwLoading(),fwStatus: FwLoading())) {
+  HomeBloc(this._getCurrentWeatherUseCase,this._getForecastWeatherUseCase) : super(HomeState(cwStatus: CwLoading(),fwStatus: FwLoading())) {
+
+
 
     on<LoadCwEvent>((event, emit) async {
       emit(state.copyWith(newCwStatus: CwLoading()));
 
-      final DataState dataState=await getCurrentWeatherUseCase(event.cityName);
+      final DataState dataState=await _getCurrentWeatherUseCase(event.cityName);
 
       if(dataState is DataSuccess){
       emit(state.copyWith(newCwStatus: CwCompleted(dataState.data)));
@@ -50,6 +52,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(state.copyWith(newFwStatus: FwError(dataState.error)));
       }
     });
+
 
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_program/core/utils/constants.dart';
 import 'package:weather_program/features/feature_bookmark/domain/entities/city_entity.dart';
 import 'package:weather_program/features/feature_bookmark/presentation/bloc/bookmark_bloc.dart';
 import 'package:weather_program/features/feature_bookmark/presentation/bloc/get_all_city_status.dart';
@@ -65,10 +66,12 @@ class BookmarkScreen extends StatelessWidget {
                               final City city = cities[index];
                               return GestureDetector(
                                 onTap: () {
+                                  Constants.textEditingController.text=city.name;
                                   /// call for getting bookmarked city Data
                                   BlocProvider.of<HomeBloc>(
                                     context,
                                   ).add(LoadCwEvent(city.name));
+
 
                                   /// animate to HomeScreen for showing Data
                                   pageController.animateToPage(
@@ -76,6 +79,7 @@ class BookmarkScreen extends StatelessWidget {
                                     duration: const Duration(milliseconds: 300),
                                     curve: Curves.easeInOut,
                                   );
+
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),

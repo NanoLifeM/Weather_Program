@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:weather_program/core/params/forecast_params.dart';
+import 'package:weather_program/core/utils/constants.dart';
 import 'package:weather_program/core/utils/date_converter.dart';
 import 'package:weather_program/core/widgets/app_background.dart';
 import 'package:weather_program/core/widgets/dot_loading_widget.dart';
@@ -28,7 +29,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with AutomaticKeepAliveClientMixin {
-  TextEditingController textEditingController = TextEditingController();
+
 
   GetSuggestionCityUseCase getSuggestionCityUseCase = GetSuggestionCityUseCase(
     locator(),
@@ -60,18 +61,18 @@ class _HomeScreenState extends State<HomeScreen>
               children: [
                 Expanded(
                   child: TypeAheadField(
-                    controller: textEditingController,
+                    controller: Constants.textEditingController,
                     builder: (context, controller, focusNode) {
                       return TextField(
                         focusNode: focusNode,
                         onSubmitted: (String prefix) {
-                          textEditingController.text = prefix;
+                          Constants.textEditingController.text = prefix;
                           BlocProvider.of<HomeBloc>(
                             context,
                           ).add(LoadCwEvent(prefix));
                         },
 
-                        controller: textEditingController,
+                        controller: Constants.textEditingController,
                         style: DefaultTextStyle.of(
                           context,
                         ).style.copyWith(fontSize: 20, color: Colors.white),
@@ -97,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen>
                       );
                     },
                     onSelected: (model) {
-                      textEditingController.text = model.name!;
+                      Constants.textEditingController.text = model.name!;
                       BlocProvider.of<HomeBloc>(
                         context,
                       ).add(LoadCwEvent(model.name!));
@@ -367,7 +368,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                           style: TextStyle(
                                                             color: Colors.white,
                                                           ),
-                                                        ); // نمایش اعداد منفی
+                                                        );
                                                       } else {
                                                         return Text(
                                                           "${value.toInt()}",
