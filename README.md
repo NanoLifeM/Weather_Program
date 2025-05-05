@@ -1,4 +1,4 @@
 <h1 >Screens</h1>
-<img src="assets/screenShot/img1.jpg">
-<img src="assets/screenShot/img2.jpg">
-<img src="assets/screenShot/img3.jpg">
+<img src="assets/screenShot/img1.jpg" width="300">
+<img src="assets/screenShot/img2.jpg" width="300">
+<img src="assets/screenShot/img3.jpg" width="300">
