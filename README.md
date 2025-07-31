@@ -1,4 +1,4 @@
-````markdown
+
 # Weather Program 🌤️
 
 <!-- App preview with controlled width -->
@@ -30,7 +30,7 @@ A lightweight, responsive weather app built with **Flutter** and the OpenWeather
    ```bash
    git clone https://github.com/NanoLifeM/Weather_Program.git
    cd Weather_Program
-````
+
 
 2. **Install Flutter and dependencies**
 
